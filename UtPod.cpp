@@ -30,10 +30,12 @@ int UtPod::addSong(Song const &s){
 int UtPod::removeSong(Song const &s){
    SongNode *current = songs;
 
+   if(current == NULL)
+      return NOT_FOUND;
+
    if(songs->s == s){ 
       songs = songs->next;
       delete current;
-cout<<"remove"<<endl;
       return SUCCESS;
    }
    
@@ -87,7 +89,7 @@ void UtPod::showSongList(){
 void UtPod::sortSongList(){
    for(SongNode *p1 = songs; p1->next != NULL; p1 = p1->next){
       SongNode *min = p1;
-      for(SongNode *p2 = songs->next; p2 != NULL; p2 = p2->next){
+      for(SongNode *p2 = p1->next; p2 != NULL; p2 = p2->next){
          if(p2->s < min->s)
             min = p2;
       }
@@ -130,5 +132,5 @@ int UtPod::getRemainingMemory(){ //remain = memSize - total memory taken by song
 
 UtPod::~UtPod(){
    clearMemory();
-   delete songs;
+//   delete songs;
 }
