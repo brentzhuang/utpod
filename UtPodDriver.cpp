@@ -20,32 +20,36 @@ int main(int argc, char *argv[])
 {
     UtPod t;
     
-    Song s1("Beatles", "Hey Jude1", 4);
+    Song s1("Artist 1", "Song 1", 4);
     int result = t.addSong(s1);
     cout << "result = " << result << endl;
     
     t.showSongList();
           
-    Song s2("Beatles", "Hey Jude2", 5);
+    Song s2("Artist 2", "Song 2", 5);
     result = t.addSong(s2);
     cout << "result = " << result << endl;
     
     t.showSongList();
        
-    Song s3("Beatles", "Hey Jude3", 6);
+    Song s3("Artist 3", "Song 3", 6);
     result = t.addSong(s3);
     cout << "result = " << result << endl;
        
-    Song s4("Beatles", "Hey Jude4", 7);
+    Song s4("Artist 4", "Song 4", 7);
     result = t.addSong(s4);
     cout << "result = " << result << endl;
        
-    Song s5("Beatles", "Hey Jude5", 241);
+    Song s5("Big Fella", "Absolute Unit", 241);
     result = t.addSong(s5);
     cout << "add result = " << result << endl;
+    result = t.addSong(s4);
     
     t.showSongList();
     
+    t.shuffle();   
+    t.showSongList();
+
     result = t.removeSong(s2);
     cout << "delete result = " << result << endl;
   
@@ -65,12 +69,22 @@ int main(int argc, char *argv[])
     
     
     t.showSongList();
-    
+    result = t.removeSong(s5);
+    cout << "delete result = " << result << endl;
+
+
     result = t.addSong(s5);
     cout << "add result = " << result << endl;
     
     t.showSongList();
     cout << "memory = " << t.getRemainingMemory() << endl;
-    
-
+ 
+    result = t.addSong(s5);
+    cout << "add result = " << result << endl;
+    result = t.addSong(s5);
+    cout << "add result = " << result << endl;
+   
+    t.showSongList();
+    t.clearMemory();
+    t.showSongList();
 }

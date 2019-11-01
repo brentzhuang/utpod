@@ -76,16 +76,29 @@ class UtPod
       void shuffle();
 
 
+
       /* FUNCTION - void showSongList
        * prints the current list of songs in order from first to last to standard output
        * format - Title, Artist, size in MB (one song per line)
-
+ 
          input parms -
 
          output parms -
       */
 
       void showSongList();
+
+
+      /* FUNCTION - int numSongs
+       * returns the current number of songs in UtPod
+         returns 0 if UtPod is empty
+ 
+         input parms -
+
+         output parms -
+      */
+
+      int numSongs();
 
 
       /* FUNCTION - void sortSongList

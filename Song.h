@@ -36,11 +36,13 @@ class Song{
 
       int getSize() const;
 
+      void swap(Song &s);
+
       bool operator >(Song const &rhs);
       bool operator <(Song const &rhs);
       bool operator ==(Song const &rhs);
       
-      ~Song();
+  //    ~Song();
 };
 
 #endif
