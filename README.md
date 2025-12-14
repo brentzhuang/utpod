@@ -1,4 +1,4 @@
-#UTPod
+**UTPod**
 
 A linked list implementation in C++ using object-oriented programming, done for EE312 at UT Austin. Course was taken in Fall 2019. 
 
